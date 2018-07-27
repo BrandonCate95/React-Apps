@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { fetchData } from "../store";
+import Helmet from "react-helmet";
 
 class Home extends React.Component {
     componentDidMount( ) {
@@ -20,6 +21,10 @@ class Home extends React.Component {
                         <li key={ circuitId } >{ circuitName } - { Location.locality }, { Location.country }</li>
                     ) ) }
                 </ul>
+                <Helmet>
+                    <title>Home Page</title>
+                    <meta name="description" content="This is a proof of concept for React SSR" />
+                </Helmet>
             </div>
         );
     }

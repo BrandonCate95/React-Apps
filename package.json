@@ -4,13 +4,13 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "build": "NODE_ENV=production webpack --progress",
+    "build": "set NODE_ENV=production webpack --progress",
     "dev": "npm-run-all --parallel server client",
+    "production": "npm-run-all --parallel server build",
     "server": "nodemon index.js",
     "client": "webpack --watch --progress",
     "linter": "eslint src",
-    "bundlesize": "bundlesize",
-    "precommit": "eslint src --quiet"
+    "bundlesize": "bundlesize"
   },
   "dependencies": {
     "isomorphic-fetch": "^2.2.1",
